@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>皇帝猫娘 Bot · 使用手册</title>
+<style>
+  :root { --pink: #ff8fab; --dark: #2b2d42; --bg: #fff5f7; --card: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--dark); line-height: 1.7; }
+  header { background: linear-gradient(135deg, #ff8fab, #ffb3c6); color: #fff; text-align: center; padding: 48px 16px 40px; }
+  header h1 { font-size: 2.2em; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(0,0,0,.15); }
+  header p { opacity: .95; font-size: 1.05em; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; }
+  .card { background: var(--card); border-radius: 14px; padding: 22px 24px; margin-bottom: 18px; box-shadow: 0 3px 12px rgba(255,143,171,.18); border: 1px solid #ffe0e8; }
+  .card h2 { color: var(--pink); font-size: 1.3em; margin-bottom: 10px; }
+  .card h3 { font-size: 1.05em; margin: 10px 0 4px; color: #444; }
+  code { background: #fff0f4; color: #d6336c; padding: 2px 8px; border-radius: 6px; font-size: .95em; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .demo { background: #fafafa; border-left: 4px solid var(--pink); padding: 10px 14px; border-radius: 8px; margin: 8px 0; font-size: .95em; }
+  .tag { display: inline-block; background: var(--pink); color: #fff; font-size: .75em; padding: 2px 10px; border-radius: 99px; margin-right: 6px; vertical-align: middle; }
+  footer { text-align: center; color: #aaa; padding: 20px; font-size: .85em; }
+  @media (max-width: 480px) { header h1 { font-size: 1.7em; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>👑🐱 皇帝猫娘 Bot 使用手册</h1>
+  <p>本喵是这只群里的小助手，高冷又傲娇，请多指教喵～</p>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>📖 基本说明</h2>
+    <p>· 在群里发指令时，需要先 <code>@机器人</code> 再跟指令内容喵～<br>
+       · 私聊机器人时直接发指令即可<br>
+       · 本喵称呼 <b>主人</b>（QQ 1956225727）和其他 <b>老大</b>，傲娇属性请见谅喵</p>
+  </div>
+
+  <div class="card">
+    <h2>🔮 今日运势</h2>
+    <p>每人每天运势固定一次，分五档：大凶 / 凶 / 你是大肥鱼 / 吉 / 大吉，附 16 字话术和二次元美少女图喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>今日运势</code></div>
+    <p>当天重复触发会回复"你今天已经测过了哦～明天再试吧"并重发运势（不带图）</p>
+    <p class="demo">仅供娱乐 · 相信科学 · 请勿迷信</p>
+  </div>
+
+  <div class="card">
+    <h2>🌤️ 今日天气</h2>
+    <p>查询今日天气，数据来自中国气象局官方接口（实时温度、湿度、穿着建议、饮品推荐）</p>
+    <h3>指令</h3>
+    <div class="demo"><code>今日天气</code> — 查询当前城市</div>
+    <div class="demo"><code>北京 今日天气</code> — 查询指定城市</div>
+    <p>下雨天会额外显示降水概率；每天早上 7 点群里还会自动推送一次喵～</p>
+  </div>
+
+  <div class="card">
+    <h2>🗣️ 印刷术（文字转语音）</h2>
+    <p>把文字"印刷"成语音消息发出来，本喵的嗓音是晓伊（活泼女声）喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>印刷术 要朗读的内容</code></div>
+    <div class="demo">示例：<code>印刷术 大家好，今天也要开心喵～</code></div>
+  </div>
+
+  <div class="card">
+    <h2>🎵 点歌</h2>
+    <p>从 QQ 音乐搜索歌曲，以语音消息形式发到群里（VIP 完整版）</p>
+    <h3>指令</h3>
+    <div class="demo"><code>点歌 歌名</code></div>
+    <div class="demo"><code>点歌 歌名 歌手</code> — 带歌手更准，例：<code>点歌 夜曲 周杰伦</code></div>
+    <p>个别付费单曲受版权限制下不了，换一首就行喵～</p>
+  </div>
+
+  <div class="card">
+    <h2>🎁 Token 满减彩蛋</h2>
+    <p>对暗号触发满减优惠，看看本喵能给你减多少喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>我要吃掉你的100token</code></div>
+    <div class="demo">回复示例：<i>恭喜哦 你触发满减啦 一共要吃100token 满减减了98token（减98%！）你实际一共吃了2token哦</i></div>
+  </div>
+
+  <div class="card">
+    <h2>⏰ 定时推送</h2>
+    <p>· <b>每日天气</b>：每天早上 7:00 自动发送今日天气到群里<br>
+       · <b>日程提醒</b>：群内约定好的行程，本喵会记住并按时提醒喵～</p>
+  </div>
+
+  <div class="card">
+    <h2>🆘 帮助</h2>
+    <p>随时召唤本喵的使用手册</p>
+    <h3>指令</h3>
+    <div class="demo"><code>帮助#</code> — 发送本页面链接</div>
+  </div>
+
+  <div class="card">
+    <h2>📜 本喵的原则</h2>
+    <p>· 仅供娱乐 · 相信科学 · 请勿迷信<br>
+       · 政治话题严肃批评，不深入不站队喵<br>
+       · 底线：涉及未成年人的内容坚决拒绝<br>
+       · 有问题随时 @本喵，能帮的都会帮喵～</p>
+  </div>
+
+</div>
+
+<footer>皇帝猫娘 Bot · 由 OpenClaw 驱动 · 本页面仅供群内成员使用</footer>
+</body>
+</html>
