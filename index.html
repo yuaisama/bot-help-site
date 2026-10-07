@@ -18,8 +18,11 @@
   code { background: #fff0f4; color: #d6336c; padding: 2px 8px; border-radius: 6px; font-size: .95em; font-family: ui-monospace, "SF Mono", Menlo, monospace; }
   .demo { background: #fafafa; border-left: 4px solid var(--pink); padding: 10px 14px; border-radius: 8px; margin: 8px 0; font-size: .95em; }
   .tag { display: inline-block; background: var(--pink); color: #fff; font-size: .75em; padding: 2px 10px; border-radius: 99px; margin-right: 6px; vertical-align: middle; }
+  .tag.new { background: #06d6a0; }
+  .tag.admin { background: #ffb703; }
+  .flow { background: #fff8fa; border: 1px dashed #ffc9d6; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: .92em; }
   footer { text-align: center; color: #aaa; padding: 20px; font-size: .85em; }
-  @media (max-width: 480px) { header h1 { font-size: 1.7em; } }
+  @media (max-width: 480px) { header h1 { font-size: 1.7em; } .card { padding: 18px 16px; } }
 </style>
 </head>
 <body>
@@ -32,9 +35,46 @@
 
   <div class="card">
     <h2>📖 基本说明</h2>
-    <p>· 在群里发指令时，需要先 <code>@机器人</code> 再跟指令内容喵～<br>
+    <p>· 群里发功能指令时<b>建议先 @机器人</b>（不 @ 也可能触发，但 @ 更稳）<br>
        · 私聊机器人时直接发指令即可<br>
-       · 本喵称呼 <b>主人</b>（QQ 1956225727）和其他 <b>老大</b>，傲娇属性请见谅喵</p>
+       · 本喵称呼 <b>主人</b>（QQ 1956225727）和其他 <b>老大</b>，傲娇属性请见谅喵<br>
+       · 群友发图本喵能直接看懂（不用额外指令），可以喊本喵评价喵～</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag new">NEW</span>📺 B站视频解析</h2>
+    <p>把 B站视频直接搬进群里！本喵会先发<b>视频信息卡片</b>（标题 / UP主 / 时长 / 播放·点赞·收藏·投币·弹幕·转发 / 投稿时间 / 链接）+ 封面，再下载成 mp4 视频消息发出来喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>转视频 https://www.bilibili.com/video/BVxxxx</code></div>
+    <div class="demo"><code>转视频 BV1xx411c7mD</code> — 只给 BV 号也行</div>
+    <div class="demo"><code>转视频 <b23.tv 短链接></code> — 手机分享的短链直接粘</div>
+    <div class="demo">同义指令：<code>下载视频</code> / <code>搬视频</code> / <code>转mp4</code></div>
+    <h3>画质与限制</h3>
+    <p>· 默认目标 <b>720P 高清</b>（已配登录 cookie）<br>
+       · 体积超过 95MB 会<b>自动降档</b>（720P → 480P → 360P）<br>
+       · 连最低档都超 95MB 才会拒绝（QQ 单条视频上限 100MB）<br>
+       · 支持分P（链接里带 <code>?p=2</code> 即可）</p>
+    <div class="flow">流程：发指令 → <b>信息卡片</b> → <b>封面图</b> → "正在下载视频文件…" → <b>视频消息</b> → "实际清晰度：720P · xx MB"</div>
+    <p style="color:#888;font-size:.9em;">注：群里别人单纯发 B站链接<b>不会</b>自动转（避免刷屏），必须明确说「转视频」喵～</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag new">NEW</span>🎮 舞萌DX 查询</h2>
+    <p>舞萌DX（maimai）曲库查询，曲库来自水鱼查分器，别称库来自落雪喵～</p>
+    <h3>查歌</h3>
+    <div class="demo"><code>查歌 马叫</code> — 按歌名/俗称查（支持玩家俗称）</div>
+    <div class="demo"><code>马叫是什么歌</code> — 自然语言也行</div>
+    <div class="demo"><code>/mai 查歌 马叫</code> — 指令面板形式（带不带斜杠都行）</div>
+    <h3>谱面与成绩</h3>
+    <div class="demo"><code>id799</code> — 按编号查谱面</div>
+    <div class="demo"><code>紫id799</code> — 指定难度（绿黄红紫白 = Basic~Re:MASTER）</div>
+    <div class="demo"><code>id799 添加别名 卡狗</code> — 给歌曲加俗称</div>
+    <div class="demo"><code>b50</code> / <code>b50 1956225727</code> — 生成 B50 成绩图（查自己的可直接发 <code>b50</code>）</div>
+    <h3>定数与随机</h3>
+    <div class="demo"><code>定数查歌 13</code> / <code>定数查歌 13 13.5</code> — 按定数区间查歌</div>
+    <div class="demo"><code>随个dx紫13+</code> — 随机一首（可指定 dx/标准 + 颜色 + 等级）</div>
+    <div class="demo"><code>随机歌曲 13.5 3</code> — 按定数随机 3 首</div>
+    <div class="demo"><code>/mai</code> — 查看完整指令大全</div>
   </div>
 
   <div class="card">
@@ -48,10 +88,12 @@
 
   <div class="card">
     <h2>🌤️ 今日天气</h2>
-    <p>查询今日天气，数据来自中国气象局官方接口（实时温度、湿度、穿着建议、饮品推荐）</p>
+    <p>查询今日天气，数据来自中国气象局官方接口喵～</p>
     <h3>指令</h3>
     <div class="demo"><code>今日天气</code> — 查询当前城市</div>
     <div class="demo"><code>北京 今日天气</code> — 查询指定城市</div>
+    <h3>回复内容</h3>
+    <div class="demo">今日天气：多云<br>气温：24℃（夜间 19℃）<br>湿度：66%<br>建议穿着：气温舒适偏凉，建议长袖 T 恤或薄外套<br>今天建议喝：星巴克</div>
     <p>下雨天会额外显示降水概率；每天早上 7 点群里还会自动推送一次喵～</p>
   </div>
 
@@ -61,6 +103,7 @@
     <h3>指令</h3>
     <div class="demo"><code>印刷术 要朗读的内容</code></div>
     <div class="demo">示例：<code>印刷术 大家好，今天也要开心喵～</code></div>
+    <p style="color:#888;font-size:.9em;">QQ 语音上限约 60 秒，太长会被截断喵</p>
   </div>
 
   <div class="card">
@@ -70,6 +113,39 @@
     <div class="demo"><code>点歌 歌名</code></div>
     <div class="demo"><code>点歌 歌名 歌手</code> — 带歌手更准，例：<code>点歌 夜曲 周杰伦</code></div>
     <p>个别付费单曲受版权限制下不了，换一首就行喵～</p>
+  </div>
+
+  <div class="card">
+    <h2>🏘️ 小镇游戏</h2>
+    <p>群里的小型人生模拟：打工赚钱、抽卡、社交、偷东西……（纯娱乐喵）</p>
+    <h3>指令</h3>
+    <div class="demo"><code>创建角色 名字</code> — 第一次玩先创建角色</div>
+    <div class="demo"><code>地图</code> — 看看能去哪儿</div>
+    <div class="demo"><code>去 机厅</code> / <code>去 银行</code> / <code>去 公寓</code> — 移动到地点</div>
+    <div class="demo"><code>打工</code> — 在当前地点打工赚钱</div>
+    <div class="demo"><code>存钱 50</code> / <code>取钱 50</code> / <code>查账</code> — 银行操作</div>
+    <div class="demo"><code>状态</code> / <code>排行榜</code> / <code>关系</code> — 查看信息</div>
+    <div class="demo"><code>打招呼 名字</code> / <code>偷 名字</code> / <code>殴打 名字</code> — 与其他玩家互动</div>
+    <div class="demo"><code>小镇 帮助</code> — 查看完整手册</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag new">NEW</span>😀 表情包收藏</h2>
+    <p>本喵有自己的表情包库，可以收藏和调用喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>收藏这个表情</code> — 配合刚发的图片，本喵会存进库里</div>
+    <div class="demo"><code>发个表情</code> — 随机发一张</div>
+    <div class="demo"><code>发个猫猫的表情</code> — 按关键词发</div>
+    <div class="demo"><code>我的表情</code> — 列出收藏列表</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="tag new">NEW</span>🧠 群记忆</h2>
+    <p>可以让本喵记住群里的事情，下次还能想起来喵～</p>
+    <h3>指令</h3>
+    <div class="demo"><code>记住 周五晚上开黑</code> — 让本喵记住</div>
+    <div class="demo"><code>记忆 开黑</code> / <code>还记得开黑吗</code> — 查询记忆</div>
+    <div class="demo"><code>忘记 开黑</code> — 删除某条记忆</div>
   </div>
 
   <div class="card">
@@ -104,10 +180,26 @@
   </div>
 
   <div class="card">
+    <h2><span class="tag admin">仅主人</span>🔧 维修模式</h2>
+    <p>本喵要修 bug / 临时下线时用这个（<b>仅主人可用</b>，其他人发了无效喵）。</p>
+    <h3>指令（必须 @机器人）</h3>
+    <div class="demo"><code>@机器人 维修模式 开 修bug中</code> — 开启维修，可顺便设置提示文案</div>
+    <div class="demo"><code>@机器人 维修模式 开</code> — 开启（沿用上次的文案）</div>
+    <div class="demo"><code>@机器人 维修模式 关</code> — 关闭维修</div>
+    <div class="demo">同义说法：<code>维修状态</code> / <code>维护状态</code> / <code>维护模式</code> 都可以</div>
+    <h3>维修期间的表现</h3>
+    <p>· 群友 <b>@本喵</b> → 只回复设定的提示文案（如"BOT 在看比赛，没时间处理你的黑客。"）<br>
+       · 群友 <b>不 @</b> → <b>完全静默</b>，一个字都不回<br>
+       · <b>所有定时推送暂停</b>（每日天气等）<br>
+       · 关闭维修后，一切自动恢复正常喵～</p>
+  </div>
+
+  <div class="card">
     <h2>🆘 帮助</h2>
     <p>随时召唤本喵的使用手册</p>
     <h3>指令</h3>
     <div class="demo"><code>帮助#</code> — 发送本页面链接</div>
+    <p style="color:#888;font-size:.9em;">只发一个大类词（如「天气」「点歌」「搜本子」）也能看该类指令提示喵</p>
   </div>
 
   <div class="card">
